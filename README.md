@@ -20,13 +20,14 @@
 
 2. Run docker container on host.
 
-    docker run -d -p 3080:3080 ohmydocker/nginx-cadvisor
+    docker run -d -p 127.0.0.1:3080:3080 -p 3081:3081 ohmydocker/nginx-cadvisor
+
+3. After few seconds, open `http://<host>:3081/` to see the cadvisor page.
 
 #### Attach persistent/shared directories
 
-    docker run -d -p 80:80 -v <sites-enabled-dir>:/etc/nginx/conf.d -v <certs-dir>:/etc/nginx/certs -v <log-dir>:/var/log/nginx -v <html-dir>:/var/www/html dockerfile/nginx
+    docker run -d -p 3081:3081 -p 127.0.0.1:3080:3080 -v <sites-enabled-dir>:/etc/nginx/conf.d -v <certs-dir>:/etc/nginx/certs -v <log-dir>:/var/log/nginx -v <html-dir>:/var/www/html dockerfile/nginx
 
-After few seconds, open `http://<host>` to see the welcome page.
 
 
 ## Credits
