@@ -1,7 +1,7 @@
 #
-# Nginx Dockerfile
+# Nginx CAdvisor proxy Dockerfile
 #
-# https://github.com/dockerfile/nginx
+# https://github.com/ohmydocker/nginx-cadvisor.git
 #
 
 # Pull base image.
@@ -26,5 +26,4 @@ WORKDIR /etc/nginx
 CMD ["nginx"]
 
 # Expose ports.
-EXPOSE 80
-EXPOSE 443
+EXPOSE 3080
